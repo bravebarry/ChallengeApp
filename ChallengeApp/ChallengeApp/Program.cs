@@ -1,26 +1,19 @@
-﻿// praca domowa dnia 4
-namespace ChallengeApp
-{
-    class Program
-    {
-        static void Main(string[] args)
-        {
-            string name = "Ewa";
-            string gender = "Kobieta";
-            int age = 33;
+﻿Console.WriteLine("Podaj liczbę:");
+string number = Console.ReadLine();
+List<int> count = new List<int>(new int[10]);
 
-            if (gender == "Kobieta" && age < 30)
-            {
-                Console.WriteLine("Kobieta poniżej 30 lat");
-            }
-            else if (name == "Ewa" && age == 33)
-            {
-                Console.WriteLine("Ewa, lat 33");
-            }
-            else if (gender == "Mężczyzna" && age < 18)
-            {
-                Console.WriteLine("Niepełnoletni Mężczyzna");
-            }
-        }
-    }
+foreach (char digit in number)
+{
+    int num = digit - '0';
+    count[num]++;
 }
+
+int i = 0;
+foreach (int value in count)
+{
+    Console.WriteLine("Cyfra " + i + " występuje " + value + " razy");
+    i++;
+}
+Console.ReadLine();
+
+// Zadanie dnia 5
